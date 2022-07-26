@@ -8,7 +8,20 @@ app.get('/posts', (req, res) => {
     const posts = listPosts(start, size);
     const users = listUsers();
 
+    const transformers = (post, user) => {
+        return {
+            ...post,
+            comments: getComments(post.id),
+            user: user
+        }
+    }
 
+    const usermap = () => users.reduce((carry, user) => {
+        return 
+    },{})
+
+
+    res.send()
 
 })
 
